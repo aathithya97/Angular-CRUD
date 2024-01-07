@@ -1,0 +1,151 @@
+
+
+<!-- <div class = "container">
+    <form [formGroup]="login" (ngSubmit)="logindata(login)" >
+        <h3>Login</h3>
+
+        <div class="form-group">
+            <label>User Name : </label>
+            <input type="text" formControlName="fname" placeholder="Enter User Name" class="form-control mb-3 mt-3">
+        </div><br>
+
+        <div class="form-group">
+            <label>Password : </label>
+            <input type="password" formControlName="password" placeholder="Enter Password" class="form-control mb-3 mt-3">
+        </div><br>
+
+        <span> create <a routerLink="dashboard">dash</a></span>
+        <button type="button" class="btn btn-success" >Login</button>
+    </form>
+
+</div> -->
+
+<!-- <div class="content-body">
+    <mat-card>
+        <mat-card-content>
+            <div class="header">
+                <h2>LOGIN</h2>
+
+            </div>
+
+            <form (ngSubmit)="onLogin()" name="loginForm">
+                <div class="email-input">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" matInput required>
+                        <mat-error *ngIf=" loginForm.get('email').errors?.required">
+                            Required email address
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <span class="aLink">Forgot Password</span>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" required/>
+                        <button mat-icon-button matSuffix (click)=" hide = !hide" 
+                        [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="loginForm.get('password').errors?.required">
+                        Required password
+                        </mat-error>
+                        
+                    </mat-form-field>
+                </div>
+                <button mat-flat-button color="primary">Login</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div> -->
+
+
+<!-- login.component.html -->
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="user.username"
+        #username="ngModel"
+        required
+      />
+      <div *ngIf="username.invalid && (username.dirty || username.touched)">
+        <div *ngIf="username.errors?.['required']" style="color: red;">* Username is required.</div>
+      </div>
+    </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
+        minlength="6"
+      />
+      <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors?.['required']"  style="color: red;">* Password is required.</div>
+        <div *ngIf="password.errors?.['minlength']"  style="color: red;">
+          * Password must be at least 6 characters long.
+        </div>
+      </div>
+    </div>
+  
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+  </div>
+  
+<!-- login.component.html -->
+
+
+
+
+
+<!-- <router-outlet></router-outlet> -->
+
+<!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="user.username"
+        #username="ngModel"
+        required
+      />
+      <div *ngIf="username.invalid && (username.dirty || username.touched)">
+        <div *ngIf="username.errors?.['required']">Username is required.</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
+        minlength="6"
+      />
+      <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors?.['required']">Password is required.</div>
+        <div *ngIf="password.errors?.['minlength']">
+          Password must be at least 6 characters long.
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form> -->
+  

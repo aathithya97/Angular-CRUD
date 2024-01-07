@@ -1,0 +1,21 @@
+.example-container {
+    /* padding-top: 60px;
+    width: 90%; */
+    height: 100%;
+    margin: 10px;
+    border: 1px solid #555;
+  }
+
+.main-content {
+  margin-left: 50px;
+  min-height: 700px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
